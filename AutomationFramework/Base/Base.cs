@@ -11,17 +11,11 @@ namespace AutomationFramework.Base
 {
     public class Base
     {
-
         public BasePage CurrentPage { get; set; }
-
-        //private IWebDriver _driver { get; set; }
 
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
-            TPage pageInstance = new TPage()
-            {
-                //_driver = (RemoteWebDriver)DriverContext.Driver
-            };
+            TPage pageInstance = new TPage();
 
             return pageInstance;
         }
@@ -30,11 +24,5 @@ namespace AutomationFramework.Base
         {
             return (TPage)this;
         }
-
-        //public virtual void NavigateSite()
-        //{
-        //    DriverContext.Browser.GoToUrl(Settings.url);
-        //    LogHelpers.WriteMessage("Navigated to Page");
-        //}
     }
 }

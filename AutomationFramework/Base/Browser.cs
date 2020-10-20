@@ -21,22 +21,22 @@ namespace AutomationFramework.Base
             DriverContext.Driver.Url = url;
         }
 
-        public void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
-        {
-            switch (browserType)
-            {
-                case BrowserType.Chrome:
-                    DriverContext.Driver = new ChromeDriver();
-                    //DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                case BrowserType.Edge:
-                    DriverContext.Driver = new EdgeDriver();
-                    //DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                default:
-                    break;
-            }
-        }
+        //public void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
+        //{
+        //    switch (browserType)
+        //    {
+        //        case BrowserType.Chrome:
+        //            DriverContext.Driver = new ChromeDriver();
+        //            //DriverContext.Browser = new Browser(DriverContext.Driver);
+        //            break;
+        //        case BrowserType.Edge:
+        //            DriverContext.Driver = new EdgeDriver();
+        //            //DriverContext.Browser = new Browser(DriverContext.Driver);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
         public void Quit()
         {
             DriverContext.Driver.Quit();

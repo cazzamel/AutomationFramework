@@ -8,7 +8,4 @@ namespace AutomationFramework.Base
         protected BasePage() => _driver = (RemoteWebDriver)DriverContext.Driver;
 
     }
-
-
 }
- 
