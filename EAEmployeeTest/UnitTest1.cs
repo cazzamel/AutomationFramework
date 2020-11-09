@@ -8,11 +8,11 @@ using NUnit.Framework;
 
 namespace EAEmployeeTest
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1 : HookInitialize
     {
 
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
             Login();
@@ -26,20 +26,20 @@ namespace EAEmployeeTest
             CurrentPage = CurrentPage.As<HomePage>().ClickLogin();
 
             //Populate data in collection
-            string fileName = Environment.CurrentDirectory.ToString() + @"\Data\UserName.xlsx";
+            //string fileName = Environment.CurrentDirectory.ToString() + @"\Data\UserName.xlsx";
             //Console.WriteLine(fileName);
-            ExcelHelpers.PopulateInCollection(fileName);
+            //ExcelHelpers.PopulateInCollection(fileName);
 
             //Read data from Excel Sheet
             //Console.WriteLine($"UserName: {ExcelHelpers.ReadData(1, "UserName")} and Password: {ExcelHelpers.ReadData(1, "Password")}");
 
-            string username = ExcelHelpers.ReadData(1, "UserName");
-            string password = ExcelHelpers.ReadData(1, "Password");
+            //string username = ExcelHelpers.ReadData(1, "UserName");
+            //string password = ExcelHelpers.ReadData(1, "Password");
 
-            CurrentPage.As<LoginPage>().EnterLoginDetails(username, password);
-            CurrentPage = CurrentPage.As<LoginPage>().ClickLogin();
+            //CurrentPage.As<LoginPage>().EnterLoginDetails(username, password);
+            //CurrentPage = CurrentPage.As<LoginPage>().ClickLogin();
             
-            NUnit.Framework.Assert.AreEqual("Hello " + username + "!", CurrentPage.As<HomePage>().LoggedInName());
+            //NUnit.Framework.Assert.AreEqual("Hello " + username + "!", CurrentPage.As<HomePage>().LoggedInName());
 
             //CurrentPage = CurrentPage.As<HomePage>().ClickEmployeeListLink();
             //CurrentPage = CurrentPage.As<LoginPage>().ClickEmployeeListLink();
